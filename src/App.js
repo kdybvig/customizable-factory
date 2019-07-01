@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Factory from './components/Factory';
 
 function App() {
+
+  const components = [
+    {name: 'Welcome', props: {name: 'Keith'}},
+    {name: 'Button', props: {}},
+    {name: 'Input', props: {type: 'number', placeholder: 'enter a number'}},
+    {name: 'Welcome', props: {name: 'Morgan'}},
+    {name: 'Welcome', props: {name: 'Nick'}},
+    {name: 'Welcome', props: {name: 'Sachn'}},
+    {name: 'Input', props: {type: 'text', placeholder: 'type something'}},
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Factory components={components}/>
     </div>
   );
 }
