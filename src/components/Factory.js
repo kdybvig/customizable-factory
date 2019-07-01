@@ -7,7 +7,8 @@ const Factory = ({ components }) => {
     return (
         <>
             {components.map ((component, index) => {
-                return cloneElement(componentMap[component.name], {...component.props, key: index})
+                const Component = componentMap[component.name]
+                return <Component {...component.props} />
             })}
         </>    
     )
